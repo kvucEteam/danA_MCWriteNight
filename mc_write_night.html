@@ -4,30 +4,32 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Bevægelser i teksten 2</title>
-    <link rel="stylesheet" href="bevaegelser.css" type="text/css" />
+    <title>MC Write Night</title>
+    <link rel="stylesheet" href="mc_write_night.css" type="text/css" />
     <link rel="stylesheet" href="../library/css/styles.css" type="text/css" />
     <meta name="author" content="ato" />
 </head>
 
 <body>
     <div class="container">
-        <h1>Bevægelser i teksten</h1>
-        <h4 class="instruktion col-xs-12 col-md-8"><span class="glyphicon glyphicon-arrow-right"></span>Placer tekststykkerne så de står i den rigtige rækkefølge </h4>
-        <div class="col-xs-12 col-md-8 task h4"></div>
-        <h3 class="titel col-xs-12 col-md-8"></h3>
-        <div class="inner_container col-xs-12 col-sm-8">
+        <h1>MC write night - skriv på tid</h1>
+        <h4 class="instruktion col-xs-12 col-md-8"><span class="glyphicon glyphicon-arrow-right"></span>Vælg fem kategorier og skriv et digt der bruger alle kategorierne</h4>
+        <div class="col-xs-12 gui_container">
+            <div class="btn btn-lg btn-info btn_bland">BLAND KATEGORIER</div>
+            <div class="tid_container">
+                <p class="p_tid">Angiv tid</p>
+                <input class="txt_tid" type="text" maxlength="2" size="2"></input>
+            </div>
+            <div class="btn btn-primary btn-lg btn_start_tid">START NEDTÆLLING</div>
         </div>
-        <div class="col-xs-12">
-            <div class="btn btn-primary btn-lg checkAnswer">TJEK RÆKKEFØLGE</div>
-        </div>
+        <div class="col-xs-12 kategori_container"></div>
     </div>
 </body>
 <script src="../library/vendor_scripts.js"></script>
 <script src="../library/custom_scripts.js"></script>
-<script src="bevaegelser.js"></script>
+<script src="mc_write_night.js"></script>
 <script>
-loadData("json/bevaegelser_1.json");
+loadData("json/mc_write_night.json");
 $(document).ready(function() {
     one_line_footer();
 });

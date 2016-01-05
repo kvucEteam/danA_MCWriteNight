@@ -1,0 +1,28 @@
+{
+    "userInterface": {
+        "header": "MC write night - skriv på tid",
+        "instruktion": "Vælg fem kategorier og skriv et digt der bruger alle kategorierne",
+        "titel": "Kedsomhed"
+    },
+    "kategorier": [{
+
+        "tekst": "EMNE",
+        "imgcontent": ["img/185x145_SOLOPGANG.svg","img/185x145_STORBYEN.svg", "img/185x145_UNGDOM.svg"]
+    }, {
+
+        "tekst": "FORM",
+        "imgcontent": ["img/form1.svg","img/form2.svg","img/form3.svg"]
+    }, {
+
+        "tekst": "BILLEDSPROG",
+        "imgcontent": ["img/185x145_test.svg","img/185x145_test3.svg"]
+    }, {
+
+        "tekst": "DIGTERJEG",
+        "imgcontent": ["img/185x145_test.svg","img/185x145_test3.svg"]
+    }, {
+
+        "tekst": "MILJØ",
+        "imgcontent": ["img/185x145_test.svg","img/185x145_test3.svg"]
+    }]
+}
