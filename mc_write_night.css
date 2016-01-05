@@ -1,0 +1,95 @@
+.selected_class {
+    background-color: #C915E9;
+    font-weight: bold;
+}
+
+.sortable_text_container {
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    overflow: auto;
+    padding: 20px 10% 20px 20px;
+    box-shadow: 1px 1px 1px #ddd;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.sortable_container {
+    display: flex;
+}
+
+.shadow {
+    box-shadow: 4px 4px 2px #ddd;
+}
+
+.instruktion {
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.glyphicon-arrow-right {
+    color: #05A0A8;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.icon_container {
+    margin-left: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.img_heli,
+.img_magnify {
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: #111;
+    width: 40px;
+}
+
+
+
+.img_heli:hover{
+    background-color: #e56ec9;
+
+}
+.img_magnify {
+   background-color: #b5f8d5;
+   padding:8px;
+}
+
+
+.img_heli {
+    background-color: #f2b9e1
+
+}
+
+.img_magnify:hover {
+    background-color: #73f9a9
+}
+
+.img_top, .img_top:hover{
+background-color: transparent;
+}
+
+
+.btn {
+    width: auto;
+}
+
+
+
+.btn-primary {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
