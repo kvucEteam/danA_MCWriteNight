@@ -2,6 +2,7 @@
     color: green;
     float: left;
     margin-right: 15px;
+    margin-top: 30px;
 }
 
 .txt_tid {
@@ -22,11 +23,10 @@
     float: left;
 }
 
-.kategori_container {
-    
-}
-.kat_obj_container{
-margin-top: 30px;
+.kategori_container {}
+
+.kat_obj_container {
+    margin-top: 30px;
 }
 
 .gui_container {}
@@ -39,10 +39,9 @@ margin-top: 30px;
 
 .glyphicon-plus-sign:before {
     color: #D0CEC6;
-    font-size: 25px;
+    font-size: 35px;
 }
 
-.glyph_container{
-        padding-top: 11%;
-    text-align: center;
+.glyph_container {
+    padding-top: 11%;
 }

@@ -7,7 +7,7 @@
     "kategorier": [{
 
         "tekst": "EMNE",
-        "imgcontent": ["img/185x145_SOLOPGANG.svg","img/185x145_STORBYEN.svg", "img/185x145_UNGDOM.svg"]
+        "imgcontent": ["img/emne1.svg","img/emne2.svg", "img/emne3.svg"]
     }, {
 
         "tekst": "FORM",
@@ -15,14 +15,14 @@
     }, {
 
         "tekst": "BILLEDSPROG",
-        "imgcontent": ["img/185x145_test.svg","img/185x145_test3.svg"]
+        "imgcontent": ["img/sprog1.svg","img/sprog2.svg","img/sprog3.svg"]
     }, {
 
         "tekst": "DIGTERJEG",
-        "imgcontent": ["img/185x145_test.svg","img/185x145_test3.svg"]
+        "imgcontent": ["img/digter1.svg","img/digter2.svg", "img/digter3.svg"]
     }, {
 
         "tekst": "MILJØ",
-        "imgcontent": ["img/185x145_test.svg","img/185x145_test3.svg"]
+        "imgcontent": ["img/miljo1.svg", "img/miljo2.svg", "img/miljo3.svg"]
     }]
 }
