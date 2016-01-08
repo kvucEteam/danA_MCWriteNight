@@ -1,12 +1,15 @@
 .tid_container {
-    color: green;
     float: left;
     margin-right: 15px;
-    margin-top: 30px;
+    padding-top: 10px;
 }
 
 .txt_tid {
     margin-left: 5px;
+    border: 0px solid;
+    height: 40px;
+    border-radius: 6px;
+    padding: 10px;
 }
 
 .p_tid {
@@ -23,15 +26,13 @@
     float: left;
 }
 
-.kategori_container {}
-
 .kat_obj_container {
     margin-top: 30px;
 }
 
-.gui_container {}
-
-.imgcontent {}
+#clock {
+    margin-top: 10px;
+}
 
 .content_header {
     text-align: center;
@@ -42,6 +43,20 @@
     font-size: 35px;
 }
 
+img {
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.glyphicon-plus-sign:hover:before {
+    color: #555;
+}
+
 .glyph_container {
-    padding-top: 11%;
+    padding-top: 23%;
+    cursor: pointer;
+}
+
+.glyph_container:hover {
+    color: red;
 }
