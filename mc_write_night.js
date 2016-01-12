@@ -60,7 +60,9 @@ function bland_kategorier() {
 }
 
 
-function startOldTimer() {
+function startTimer() {
+
+    $("audio").remove();
 
     $(".btn_start_tid, .txt_tid, .p_tid").hide();
     var minutes = $(".txt_tid").val();
@@ -73,46 +75,20 @@ function startOldTimer() {
         .on('update.countdown', function(event) {
             var $this = $(this);
             if (event.elapsed) {
-                $('div#clock').countdown('pause');
-                
-                $('div#clock').remove();
+                $('#clock').countdown('stop');
+                $(".btn_start_tid, .txt_tid, .p_tid").show();
+                $('#clock').remove();
                 $(".tid_container").append("<div id='clock'></div>");
                 $(".btn_start_tid").html("Start nedtælling").click(startTimer);
+                $("body").append("<audio autoplay><source src='times_up.mp3' type='audio/mpeg'></audio>");
 
+
+                UserMsgBox("body", "<h3>Tiden er udløbet</h3><p>Fik du skrevet et godt digt?</p>");
 
             } else {
                 $this.html(event.strftime('Tid tilbage: <span>%H:%M:%S</span>'));
             }
         })
-}
-
-function startTimer() {
-
-    $(".btn_start_tid, .txt_tid, .p_tid").hide();
-    $("#clock").show();
-    var minutes = $(".txt_tid").val();
-    var seconds = new Date().getTime() + (minutes * 60000);
-
-    var display = document.querySelector('#clock'),
-        timer = new CountDownTimer(minutes); // * 60);
-
-    timer.onTick(format).onTick(restart).start();
-
-    function restart() {
-        if (this.expired()) {
-            UserMsgBox("body", "<h3>Tiden er udløbet</h3><p>Fik du skrevet et godt digt?</p>");
-            $(".btn_start_tid, .txt_tid, .p_tid").show();
-            $("#clock").hide();
-            //this.stop();
-
-        }
-    }
-
-    function format(minutes, seconds) {
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-        display.textContent = minutes + ':' + seconds;
-    }
 }
 
 function stopTimer() {
