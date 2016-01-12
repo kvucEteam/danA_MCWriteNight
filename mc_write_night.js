@@ -63,32 +63,32 @@ function bland_kategorier() {
 function startTimer() {
 
     $("audio").remove();
-
-    $(".btn_start_tid, .txt_tid, .p_tid").hide();
+    $(".btn_start_tid, .btn_bland, .txt_tid, .p_tid").hide();
+    $("#clock").show();
     var minutes = $(".txt_tid").val();
     var seconds = new Date().getTime() + (minutes * 60000);
 
-    console.log(seconds);
-    $('#clock').countdown(seconds, {
-            elapse: true
-        })
-        .on('update.countdown', function(event) {
-            var $this = $(this);
-            if (event.elapsed) {
-                $('#clock').countdown('stop');
-                $(".btn_start_tid, .txt_tid, .p_tid").show();
-                $('#clock').remove();
-                $(".tid_container").append("<div id='clock'></div>");
-                $(".btn_start_tid").html("Start nedtælling").click(startTimer);
-                $("body").append("<audio autoplay><source src='times_up.mp3' type='audio/mpeg'></audio>");
+    var display = document.querySelector('#clock'),
+        timer = new CountDownTimer(minutes * 60);
 
+    timer.onTick(format).onTick(restart).start();
 
-                UserMsgBox("body", "<h3>Tiden er udløbet</h3><p>Fik du skrevet et godt digt?</p>");
+    function restart() {
+        if (this.expired()) {
+            $("body").append("<audio autoplay><source src='times_up.mp3' type='audio/mpeg'></audio>");
+            UserMsgBox("body", "<h3>Tiden er udløbet</h3><p>Fik du skrevet et godt digt?</p>");
+            $(".btn_start_tid, .btn_bland, .txt_tid, .p_tid").show();
+            $("#clock").hide();
+            //this.stop();
 
-            } else {
-                $this.html(event.strftime('Tid tilbage: <span>%H:%M:%S</span>'));
-            }
-        })
+        }
+    }
+
+    function format(minutes, seconds) {
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = "Tid tilbage:"  + minutes + ':' + seconds;
+    }
 }
 
 function stopTimer() {
