@@ -4,7 +4,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>MC Write Night</title>
+    <title>Skriv et digt på tid</title>
     <link rel="stylesheet" href="mc_write_night.css" type="text/css" />
     <link rel="stylesheet" href="../library/css/styles.css" type="text/css" />
     <meta name="author" content="ato" />
@@ -12,13 +12,13 @@
 
 <body>
     <div class="container">
-        <h1>MC write night - skriv på tid</h1>
-        <h4 class="instruktion col-xs-12 col-md-8"><span class="glyphicon glyphicon-arrow-right"></span>Vælg fem kategorier og skriv et digt der bruger alle kategorierne</h4>
+        <h1>Skriv et digt på tid</h1>
+        <h4 class="instruktion col-xs-12 col-md-8"><span class="glyphicon glyphicon-arrow-right"></span>Skriv et digt der bruger alle kategorierne</h4>
         <div class="col-xs-12 gui_container">
             <div class="btn btn-lg btn-info btn_bland">BLAND KATEGORIER</div>
             <div class="tid_container h4">
                 <p class="p_tid">Angiv minutter:</p>
-                <input class="txt_tid" type="text" maxlength="2" size="2" value="10"></input>
+                <input class="txt_tid" type="text" maxlength="2" size="2" value="2"></input>
             <div id="clock"></div>
             </div>
             <div class="btn btn-primary btn-lg btn_start_tid">START NEDTÆLLING</div>
@@ -29,6 +29,7 @@
 </body>
 <script src="../library/vendor_scripts.js"></script>
 <script src="../library/custom_scripts.js"></script>
+<script src="../library/js/countdowntimer.js"></script>
 <script src="mc_write_night.js"></script>
 <script>
 loadData("json/mc_write_night.json");
