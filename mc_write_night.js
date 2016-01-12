@@ -76,7 +76,7 @@ function startTimer() {
     function restart() {
         if (this.expired()) {
             $("body").append("<audio autoplay><source src='times_up.mp3' type='audio/mpeg'></audio>");
-            UserMsgBox("body", "<h3>Tiden er udløbet</h3><p>Fik du skrevet et godt digt?</p>");
+            UserMsgBox("body", "<h3>Tiden er udløbet</h3>");
             $(".btn_start_tid, .btn_bland, .txt_tid, .p_tid").show();
             $("#clock").hide();
             //this.stop();
