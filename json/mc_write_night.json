@@ -7,7 +7,7 @@
     "kategorier": [{
 
         "tekst": "EMNE",
-        "imgcontent": ["img/emne1.svg","img/emne2.svg", "img/emne3.svg"]
+        "imgcontent": ["img/emne2.svg","img/emne3.svg", "img/emne4.svg", "img/emne5.svg", "img/emne6.svg"]
     }, {
 
         "tekst": "FORM",
