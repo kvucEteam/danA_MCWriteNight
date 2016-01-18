@@ -1,7 +1,7 @@
 {
     "userInterface": {
-        "header": "MC write night - skriv på et Digt på tid",
-        "instruktion": "Vælg fem kategorier og skriv et digt der bruger alle kategorierne"
+        "header": "MC write night - skriv et debatindlæg",
+        "instruktion": "Vælg fem kategorier og skriv et debatindlæg der bruger alle kategorierne"
     },
     "kategorier": [{
 
