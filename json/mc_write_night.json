@@ -6,22 +6,22 @@
     "kategorier": [{
 
         "tekst": "EMNE",
-        "imgcontent": ["img/emne1.svg","img/emne2.svg","img/emne3.svg", "img/emne4.svg", "img/emne5.svg", "img/emne6.svg"]
+        "imgcontent": ["img/digt/emne1.svg","img/digt/emne2.svg","img/digt/emne3.svg", "img/digt/emne4.svg", "img/digt/emne5.svg", "img/digt/emne6.svg"]
     }, {
 
         "tekst": "FORM",
-        "imgcontent": ["img/form1.svg","img/form2.svg","img/form3.svg"]
+        "imgcontent": ["img/digt/form1.svg","img/digt/form2.svg","img/digt/form3.svg"]
     }, {
 
         "tekst": "BILLEDSPROG",
-        "imgcontent": ["img/sprog1.svg","img/sprog2.svg","img/sprog3.svg"]
+        "imgcontent": ["img/digt/sprog1.svg","img/digt/sprog2.svg","img/digt/sprog3.svg"]
     }, {
 
         "tekst": "DIGTERJEG",
-        "imgcontent": ["img/digter1.svg","img/digter2.svg", "img/digter3.svg"]
+        "imgcontent": ["img/digt/digter1.svg","img/digt/digter2.svg", "img/digt/digter3.svg"]
     }, {
 
         "tekst": "MILJØ",
-        "imgcontent": ["img/miljo1.svg", "img/miljo2.svg", "img/miljo3.svg"]
+        "imgcontent": ["img/digt/miljo1.svg", "img/digt/miljo2.svg", "img/digt/miljo3.svg"]
     }]
 }
