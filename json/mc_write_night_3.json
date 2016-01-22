@@ -1,0 +1,34 @@
+{
+    "userInterface": {
+        "header": "MC write night - skriv et eventyr",
+        "instruktion": "Vælg fem kategorier og skriv et debatindlæg der bruger alle kategorierne", 
+        "opg_type" : "eventyr"
+    },
+    "kategorier": [{
+
+        "tekst": "KOMPOSITION",
+        "kat_type": "odd",
+        "imgcontent": ["img/debat/emne1.svg","img/debat/emne2.svg","img/debat/emne3.svg", "img/debat/emne4.svg", "img/debat/emne5.svg", "img/debat/emne6.svg"]
+    },{
+
+        "tekst": "OBJEKT",
+        "imgcontent": ["img/debat/emne1.svg","img/debat/emne2.svg","img/debat/emne3.svg", "img/debat/emne4.svg", "img/debat/emne5.svg", "img/debat/emne6.svg"]
+    }, {
+
+        "tekst": "EVENTYRTRÆK",
+        "kat_type": "odd",
+        "imgcontent": ["img/debat/holdning1.svg","img/debat/holdning2.svg","img/debat/holdning3.svg","img/debat/holdning4.svg"]
+    }, {
+
+        "tekst": "HJÆLPER",
+        "imgcontent": ["img/debat/appel1.svg","img/debat/appel2.svg","img/debat/appel3.svg"]
+    }, {
+
+        "tekst": "SUBJEKT",
+        "imgcontent": ["img/debat/sprog1.svg","img/debat/sprog2.svg", "img/debat/sprog3.svg", "img/debat/sprog4.svg"]
+    }, {
+
+        "tekst": "MODSTANDER",
+        "imgcontent": ["img/debat/argument1.svg", "img/debat/argument2.svg", "img/debat/argument3.svg", "img/debat/argument4.svg", "img/debat/argument5.svg"]
+    }]
+}

@@ -32,10 +32,35 @@ function init() {
 
     $(".btn_start_tid").click(startTimer);
 
-    for (var i = 0; i < JsonObj.kategorier.length; i++) {
-        var rand = Math.floor(Math.random() * JsonObj.kategorier[i].imgcontent.length);
-        $(".kategori_container").append("<div class='kat_obj_container col-xs-6 col-md-4'><div class='inner_container col-xs-10'> <div class='imgcontent'><img src='" + JsonObj.kategorier[i].imgcontent[rand] + "' value='" + rand + "' /></div><div class='content_header h3'>" + JsonObj.kategorier[i].tekst + "</div></div><div class='col-xs-1 glyph_container'> <span class='glyphicon glyphicon-plus-sign'></span></div></div>");
-    }
+    if (JsonObj.userInterface.opg_type != "eventyr"){
+    /// Standard for objekt der ikke skal positionenes fast: 
+        for (var i = 0; i < JsonObj.kategorier.length; i++) {
+            var rand = Math.floor(Math.random() * JsonObj.kategorier[i].imgcontent.length);
+            $(".kategori_container").append("<div class='kat_obj_container col-xs-6 col-md-4'><div class='inner_container col-xs-10'> <div class='imgcontent' value='"+i+"'><img src='" + JsonObj.kategorier[i].imgcontent[rand] + "' value='" + rand + "' /></div><div class='content_header h3'>" + JsonObj.kategorier[i].tekst + "</div></div><div class='col-xs-1 glyph_container'> <span class='glyphicon glyphicon-plus-sign'></span></div></div>");
+    
+        }
+    } else if (JsonObj.userInterface.opg_type === "eventyr"){
+        for (var i = 0; i < JsonObj.kategorier.length; i++) {
+            var rand = Math.floor(Math.random() * JsonObj.kategorier[i].imgcontent.length);
+            $(".kategori_container").append("<div class='kat_obj_container col-xs-6 col-md-4 "+ JsonObj.kategorier[i].kat_type + "'><div class='inner_container col-xs-10'> <div class='imgcontent' value='"+i+"'><img src='" + JsonObj.kategorier[i].imgcontent[rand] + "' value='" + rand + "' /></div><div class='content_header h3'>" + JsonObj.kategorier[i].tekst + "</div></div><div class='col-xs-1 glyph_container'> <span class='glyphicon glyphicon-plus-sign'></span></div></div>");
+    
+        }
+
+        $(".odd").each(function(){
+            $(this).addClass("clone");            
+            $(this).clone().appendTo(".kategori_container");
+            $(this).addClass("hidden-xs hidden-sm").css("opacity", .3).removeClass("clone");
+        });
+
+        $(".clone").addClass("hidden-md hidden-lg");
+
+}
+
+    //// Eventyr exception: 
+
+
+
+
     //$(".glyph_container").eq($(".glyph_container").length - 1).hide();
 
     $(".glyph_container, .imgcontent").click(function() {
@@ -46,11 +71,14 @@ function init() {
 
 function bland_kategorier() {
     $(".imgcontent").each(function(index) {
-        $(this).find("img").delay(index * 150).animate({
+        var indeks = parseInt($(this).attr("value"));
+        console.log("indeks: " + indeks);
+        $(this).find("img").delay(indeks * 150).animate({
             opacity: "0",
         }, 250, function() {
-            var rand = Math.floor(Math.random() * JsonObj.kategorier[index].imgcontent.length);
-            $("img").eq(index).attr("src", JsonObj.kategorier[index].imgcontent[rand]).attr("value", rand)
+            var rand = Math.floor(Math.random() * JsonObj.kategorier[indeks].imgcontent.length);
+            console.log("rand: " + rand);
+            $("img").eq(index).attr("src", JsonObj.kategorier[indeks].imgcontent[rand]).attr("value", rand)
             $("img").eq(index).animate({
                 opacity: "1"
             }, 300);
@@ -97,22 +125,28 @@ function stopTimer() {
 }
 
 function next_icon(obj) {
+    //obj.hide();
 
     var isimg = obj.hasClass("imgcontent");
 
     var parents = obj.closest("body");
 
     if (isimg === true) {
-        var indeks = obj.parent().parent().index();
+        var indeks = obj.attr("value");
     } else {
         var indeks = obj.parent().index();
     }
 
+    console.log("indeks:" + indeks);
+
     var new_img_value = parseInt($("img").eq(indeks).attr("value"));
+
+console.log("new_img_value:" + new_img_value);
 
     new_img_value++;
 
-    $("img").eq(indeks).animate({
+
+    $(" .imgcontent#"+indeks).animate({
         opacity: "0",
     }, 200 + Math.random() * 300, function() {
         if (new_img_value < JsonObj.kategorier[indeks].imgcontent.length) {
