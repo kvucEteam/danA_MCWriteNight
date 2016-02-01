@@ -28,6 +28,7 @@
 
 .kat_obj_container {
     margin-top: 30px;
+    MARGIN-BOTTOM: 20PX;
 }
 
 #clock {
@@ -44,8 +45,15 @@
 }
 
 img {
-    border-radius: 6px;
     cursor: pointer;
+border-radius: 6px;
+}
+
+.imgcontent {
+    border:1px solid #333;
+    cursor: pointer;
+    border-radius: 6px;
+    as: -40px;
 }
 
 .glyphicon-plus-sign:hover:before {
@@ -59,4 +67,31 @@ img {
 
 .btn-lg{
        margin: 20px 20px 0px 0;
+}
+.arrow_svg{
+    position: absolute;
+    top: 30%;
+    border-radius: 0px;
+}
+.arrow_0{
+    width: 25%;
+    left: 83%;
+}
+.arrow_1{
+    height: 27%;
+    top: -16%;
+    left: 42%;
+}
+.arrow_2{
+    width: 25%;
+    left: -8%;
+}
+
+
+.odd > .inner_container > .imgcontent{
+    border-radius: 200px;
+}
+
+.odd > .inner_container > .imgcontent > .ikon{
+    border-radius: 200px;
 }

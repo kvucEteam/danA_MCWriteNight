@@ -32,29 +32,42 @@ function init() {
 
     $(".btn_start_tid").click(startTimer);
 
-    if (JsonObj.userInterface.opg_type != "eventyr"){
-    /// Standard for objekt der ikke skal positionenes fast: 
+    if (JsonObj.userInterface.opg_type != "eventyr") {
+        /// Standard for objekt der ikke skal positionenes fast: 
         for (var i = 0; i < JsonObj.kategorier.length; i++) {
             var rand = Math.floor(Math.random() * JsonObj.kategorier[i].imgcontent.length);
-            $(".kategori_container").append("<div class='kat_obj_container col-xs-6 col-md-4'><div class='inner_container col-xs-10'> <div class='imgcontent' value='"+i+"'><img src='" + JsonObj.kategorier[i].imgcontent[rand] + "' value='" + rand + "' /></div><div class='content_header h3'>" + JsonObj.kategorier[i].tekst + "</div></div><div class='col-xs-1 glyph_container'> <span class='glyphicon glyphicon-plus-sign'></span></div></div>");
-    
+            $(".kategori_container").append("<div class='kat_obj_container col-xs-6 col-md-4'><div class='inner_container col-xs-10'> <div class='imgcontent' value='" + i + "'><img class='ikon' src='" + JsonObj.kategorier[i].imgcontent[rand] + "' value='" + rand + "' /></div><div class='content_header h3'>" + JsonObj.kategorier[i].tekst + "</div></div><div class='col-xs-1 glyph_container'> <span class='glyphicon glyphicon-plus-sign'></span></div></div>");
+
         }
-    } else if (JsonObj.userInterface.opg_type === "eventyr"){
+    } else if (JsonObj.userInterface.opg_type === "eventyr") {
         for (var i = 0; i < JsonObj.kategorier.length; i++) {
             var rand = Math.floor(Math.random() * JsonObj.kategorier[i].imgcontent.length);
-            $(".kategori_container").append("<div class='kat_obj_container col-xs-6 col-md-4 "+ JsonObj.kategorier[i].kat_type + "'><div class='inner_container col-xs-10'> <div class='imgcontent' value='"+i+"'><img src='" + JsonObj.kategorier[i].imgcontent[rand] + "' value='" + rand + "' /></div><div class='content_header h3'>" + JsonObj.kategorier[i].tekst + "</div></div><div class='col-xs-1 glyph_container'> <span class='glyphicon glyphicon-plus-sign'></span></div></div>");
-    
+            $(".kategori_container").append("<div class='kat_obj_container col-xs-6 col-md-4 " + JsonObj.kategorier[i].kat_type + "'><div class='inner_container col-xs-10'> <div class='imgcontent' value='" + i + "'><img class='ikon' src='" + JsonObj.kategorier[i].imgcontent[rand] + "' value='" + rand + "' /></div><div class='content_header h3'>" + JsonObj.kategorier[i].tekst + "</div></div></div>");
+
         }
 
-        $(".odd").each(function(){
-            $(this).addClass("clone");            
+        $(".odd").each(function() {
+            // Runde hjørner til kategorier udenfor aktant modellen
+            
+//Kopier til mobilvisning og skjul:  
+            $(this).addClass("clone");
             $(this).clone().appendTo(".kategori_container");
-            $(this).addClass("hidden-xs hidden-sm").css("opacity", .3).removeClass("clone");
+            $(this).addClass("hidden-xs hidden-sm").removeClass("clone");
+        });
+
+        $(".imgcontent").each(function(index) {
+            if (index == 3) {
+                $(this).append("<img class='arrow_svg arrow_0 hidden-sm hidden-xs' src='img/aktant/pil_venstre.svg'>");
+            } else if (index == 4) {
+                $(this).append("<img class='arrow_svg arrow_1 hidden-sm hidden-xs' src='img/aktant/pil_op.svg'>");
+            } else if (index == 5) {
+                $(this).append("<img class='arrow_svg arrow_2 hidden-sm hidden-xs' src='img/aktant/pil_hojre.svg'>");
+            }
         });
 
         $(".clone").addClass("hidden-md hidden-lg");
 
-}
+    }
 
     //// Eventyr exception: 
 
@@ -115,7 +128,7 @@ function startTimer() {
     function format(minutes, seconds) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-        display.textContent = "Tid tilbage:"  + minutes + ':' + seconds;
+        display.textContent = "Tid tilbage:" + minutes + ':' + seconds;
     }
 }
 
@@ -141,20 +154,20 @@ function next_icon(obj) {
 
     var new_img_value = parseInt($("img").eq(indeks).attr("value"));
 
-console.log("new_img_value:" + new_img_value);
+    console.log("new_img_value:" + new_img_value);
 
     new_img_value++;
 
 
-    $(" .imgcontent#"+indeks).animate({
+    obj.find(".ikon").animate({
         opacity: "0",
     }, 200 + Math.random() * 300, function() {
         if (new_img_value < JsonObj.kategorier[indeks].imgcontent.length) {
-            $("img").eq(indeks).attr("src", JsonObj.kategorier[indeks].imgcontent[new_img_value]).attr("value", new_img_value);
+            $(".ikon").eq(indeks).attr("src", JsonObj.kategorier[indeks].imgcontent[new_img_value]).attr("value", new_img_value);
         } else {
-            $("img").eq(indeks).attr("src", JsonObj.kategorier[indeks].imgcontent[0]).attr("value", 0);
+            $(".ikon").eq(indeks).attr("src", JsonObj.kategorier[indeks].imgcontent[0]).attr("value", 0);
         }
-        $("img").eq(indeks).animate({
+        $(".ikon").eq(indeks).animate({
             opacity: "1"
         }, 200);
     });
