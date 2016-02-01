@@ -75,7 +75,7 @@ border-radius: 6px;
 }
 .arrow_0{
     width: 25%;
-    left: 83%;
+    left: 89%;
 }
 .arrow_1{
     height: 27%;
@@ -84,14 +84,14 @@ border-radius: 6px;
 }
 .arrow_2{
     width: 25%;
-    left: -8%;
+    left: -14%;
 }
 
 
 .odd > .inner_container > .imgcontent{
-    border-radius: 200px;
+    border-radius: 80px;
 }
 
 .odd > .inner_container > .imgcontent > .ikon{
-    border-radius: 200px;
+    border-radius: 80px;
 }

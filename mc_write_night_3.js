@@ -86,13 +86,13 @@ function bland_kategorier() {
     $(".imgcontent").each(function(index) {
         var indeks = parseInt($(this).attr("value"));
         console.log("indeks: " + indeks);
-        $(this).find("img").delay(indeks * 150).animate({
+        $(this).find(".ikon").delay(indeks * 150).animate({
             opacity: "0",
         }, 250, function() {
             var rand = Math.floor(Math.random() * JsonObj.kategorier[indeks].imgcontent.length);
             console.log("rand: " + rand);
-            $("img").eq(index).attr("src", JsonObj.kategorier[indeks].imgcontent[rand]).attr("value", rand)
-            $("img").eq(index).animate({
+            $(".ikon").eq(index).attr("src", JsonObj.kategorier[indeks].imgcontent[rand]).attr("value", rand)
+            $(".ikon").eq(index).animate({
                 opacity: "1"
             }, 300);
         });
