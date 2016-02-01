@@ -152,7 +152,7 @@ function next_icon(obj) {
 
     console.log("indeks:" + indeks);
 
-    var new_img_value = parseInt($("img").eq(indeks).attr("value"));
+    var new_img_value = parseInt($(".ikon").eq(indeks).attr("value"));
 
     console.log("new_img_value:" + new_img_value);
 
