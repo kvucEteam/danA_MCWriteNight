@@ -46,14 +46,16 @@
 
 img {
     cursor: pointer;
-border-radius: 6px;
+    border-radius: 6px;
+    padding: 0px;
+    width:100%;
 }
 
 .imgcontent {
-    border:1px solid #333;
+    border: 1px solid #333;
     cursor: pointer;
     border-radius: 6px;
-    as: -40px;
+    padding: 0px;
 }
 
 .glyphicon-plus-sign:hover:before {
@@ -65,33 +67,36 @@ border-radius: 6px;
     cursor: pointer;
 }
 
-.btn-lg{
-       margin: 20px 20px 0px 0;
+.btn-lg {
+    margin: 20px 20px 0px 0;
 }
-.arrow_svg{
+
+.arrow_svg {
     position: absolute;
     top: 30%;
     border-radius: 0px;
 }
-.arrow_0{
+
+.arrow_0 {
     width: 25%;
     left: 89%;
 }
-.arrow_1{
+
+.arrow_1 {
     height: 27%;
     top: -16%;
     left: 42%;
 }
-.arrow_2{
+
+.arrow_2 {
     width: 25%;
     left: -14%;
 }
 
-
-.odd > .inner_container > .imgcontent{
+.odd > .inner_container > .imgcontent {
     border-radius: 80px;
 }
 
-.odd > .inner_container > .imgcontent > .ikon{
+.odd > .inner_container > .imgcontent > .ikon {
     border-radius: 80px;
 }
