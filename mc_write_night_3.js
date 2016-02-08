@@ -173,9 +173,9 @@ function next_icon(obj) {
     });
 
 
-
-
-
-
-
 }
+
+
+$(document).ready(function() {
+    $('#instructionWrap').html(instruction(JsonObj.userInterface.instruktion));
+});

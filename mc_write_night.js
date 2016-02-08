@@ -159,10 +159,8 @@ console.log("new_img_value:" + new_img_value);
         }, 200);
     });
 
-
-
-
-
-
-
 }
+
+$(document).ready(function() {
+    $('#instructionWrap').html(instruction(JsonObj.userInterface.instruktion));
+});
