@@ -125,10 +125,9 @@ function next_icon(obj) {
         }, 200);
     });
 
-
-
-
-
-
-
 }
+
+
+$(document).ready(function() {
+    $('#instructionWrap').html(instruction(JsonObj.userInterface.instruktion));
+});

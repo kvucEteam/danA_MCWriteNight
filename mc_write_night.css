@@ -85,7 +85,8 @@ img {
 .arrow_1 {
     height: 27%;
     top: -16%;
-    left: 42%;
+    /*left: 42%;*/
+    left: 0%;
 }
 
 .arrow_2 {
