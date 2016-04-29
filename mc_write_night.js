@@ -27,7 +27,6 @@ function loadData(url) {
 }
 
 function init() {
-    alert("ost!")
 
     $(".btn_bland").click(bland_kategorier);
 
@@ -63,8 +62,6 @@ function bland_kategorier() {
 
 function startTimer() {
 
-	alert("sker der noget?")
-
     $("audio").remove();
     $(".btn_start_tid, .btn_bland, .txt_tid, .p_tid").hide();
     $("#clock").show();
@@ -76,7 +73,11 @@ function startTimer() {
 
     timer.onTick(format).onTick(restart).start();
 
-    $(".gui_container").html("<div class='pause'>hej</div");
+    $(".tid_container").append("<span class='btn_stop btn btn-info'><span class='glyphicon glyphicon-stop'></span> Stop </span>");
+
+    $(".btn_stop").click(function(){
+      location.reload();
+    });
 
     function restart() {
         if (this.expired()) {
@@ -84,15 +85,18 @@ function startTimer() {
             UserMsgBox("body", "<h3>Tiden er udløbet</h3>");
             $(".btn_start_tid, .btn_bland, .txt_tid, .p_tid").show();
             $("#clock").hide();
+            $(".btn_stop").remove();
             //this.stop();
 
         }
+        console.log(format);
     }
 
     function format(minutes, seconds) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-        display.textContent = "Tid tilbage:"  + minutes + ':' + seconds;
+        display.textContent = "Tid tilbage: " + minutes + ':' + seconds;
+        txt_format_tid = minutes + ':' + seconds;
     }
 }
 
