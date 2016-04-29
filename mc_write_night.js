@@ -27,6 +27,7 @@ function loadData(url) {
 }
 
 function init() {
+    alert("ost!")
 
     $(".btn_bland").click(bland_kategorier);
 
@@ -62,6 +63,8 @@ function bland_kategorier() {
 
 function startTimer() {
 
+	alert("sker der noget?")
+
     $("audio").remove();
     $(".btn_start_tid, .btn_bland, .txt_tid, .p_tid").hide();
     $("#clock").show();
@@ -72,6 +75,8 @@ function startTimer() {
         timer = new CountDownTimer(minutes * 60);
 
     timer.onTick(format).onTick(restart).start();
+
+    $(".gui_container").html("<div class='pause'>hej</div");
 
     function restart() {
         if (this.expired()) {

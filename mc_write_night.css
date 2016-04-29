@@ -38,6 +38,7 @@
 
 #clock {
     margin-top: 10px;
+    float: left;
 }
 
 .content_header {
@@ -106,3 +107,5 @@ img {
 .odd > .inner_container > .imgcontent > .ikon {
     border-radius: 80px;
 }
+
+.btn_stop{float:left;margin-left: 30px;margin-top: 2px;}
